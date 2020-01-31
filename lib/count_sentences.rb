@@ -29,7 +29,7 @@ class String
   end
 
   def count_sentences
-    sentence_array = self.split(/[.?!]/)
-    return sentence_array.count 
+    self.split(/\.|\?|\!/).delete_if {|w| w.size < 2}.size
+  end
   
 end
